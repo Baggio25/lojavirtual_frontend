@@ -1,5 +1,5 @@
 export interface Usuario {
-  id    : number,
+  id?    : number,
   login : String,
   senha : String
 
