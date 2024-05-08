@@ -28,4 +28,9 @@ export class AppComponent {
     }
   }
 
+  fazerLogin() {
+    const usuario = this.loginObjeto();
+    console.log('Dados de login -> ' + usuario.login + ' - ' + usuario.senha);
+  }
+
 }
