@@ -32,11 +32,20 @@ export class AppComponent {
 
   fazerLogin() {
     const usuario = this.loginObjeto();
-    console.log('Dados de login -> ' + usuario.login + ' - ' + usuario.senha);
-
     this.loginService.logar(usuario);
+  }
 
-    console.log('Acessou com usuário: ' + usuario.login);
+  recuperarSenha(){
+    const usuario = this.loginObjeto();
+    var login = usuario.login;
+
+    console.log('---- > Login: ' + login);
+
+    if(login == null || login == ' ') {
+      alert('Informe o E-mail para recuperar a senha!')
+    }else {
+      this.loginService.recuperarSenha(login);
+    }
   }
 
 }

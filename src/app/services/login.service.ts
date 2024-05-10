@@ -29,4 +29,8 @@ export class LoginService {
     });
   }
 
+  recuperarSenha(login : String) {
+
+  }
+
 }

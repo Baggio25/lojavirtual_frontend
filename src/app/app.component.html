@@ -28,7 +28,9 @@
         <div class="d-flex flex-column align-itens-center mt-2">
           <button type="submit" class="btn btn-primary" 
                   (click)="fazerLogin()" [disabled]="!loginForm.valid">Acessar</button>
-          <button type="submit" class="btn btn-outline-secondary btn-sm mt-2">Recuperar Senha</button>
+          
+          <button type="submit" class="btn btn-outline-secondary btn-sm mt-2"
+                  (click)="recuperarSenha()">Recuperar Senha</button>
         </div>
       </form>
     </div>
