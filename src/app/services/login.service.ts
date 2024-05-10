@@ -16,8 +16,10 @@ export class LoginService {
   logar( usuario: Usuario) {
     return this.http.post<string>(this.ulrApi, usuario).subscribe({
       next: (res) => {
-        console.log("----------- JWT -----------");
-        console.log(res);
+        var respJson = JSON.stringify(res);
+        var jwt = JSON.parse(respJson);
+
+        localStorage.setItem("AuthorizationLojaVirtual", jwt.Authorization);
       },
 
       error: (error) => {
