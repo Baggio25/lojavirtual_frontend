@@ -18,12 +18,10 @@ export class LoginService {
       next: (res) => {
         console.log("----------- JWT -----------");
         console.log(res);
-
-        alert("Login realizado!");
       },
 
       error: (error) => {
-        alert("Deu erro!");
+        alert("Deu erro!" + error.error.text);
         console.error(error);
       }
     });
