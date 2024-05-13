@@ -14,7 +14,6 @@
           <div class="col-sm-9">
             <input type="email" class="form-control form-control-sm" id="login" 
                     name="login" formControlName="login" autofocus/>
-            <span *ngIf="loginForm.get('login')?.errors" style="font-size: small; color: red;">Login é obrigatório</span>
           </div>
         </div>
         <div class="row mb-3">
@@ -22,7 +21,6 @@
           <div class="col-sm-9">
             <input type="password" class="form-control form-control-sm" id="senha" 
                     name="senha" formControlName="senha"/>
-            <span *ngIf="loginForm.get('senha')?.errors" style="font-size: small; color: red;">Senha é obrigatória</span>
           </div>
         </div>
         <div class="d-flex flex-column align-itens-center mt-2">
