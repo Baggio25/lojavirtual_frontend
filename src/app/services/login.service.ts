@@ -32,12 +32,15 @@ export class LoginService {
   recuperarSenha(login : String) {
     return this.http.post<string>(environment.urlApi + '/recuperarSenha', login).subscribe({
       next: (res) => {
-        alert(res);
+        var respJson = JSON.stringify(res);
+        var resposta = JSON.parse(respJson);
+
+        alert(resposta.msg);
       },
 
       error: (error) => {
         console.log(error);
-        alert("Erro ao recuperar senha: " + error);
+        alert("Erro ao recuperar senha: " + JSON.stringify(error));
       }
     });
   }
