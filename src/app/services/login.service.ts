@@ -8,13 +8,13 @@ import { Usuario } from '../model/usuario';
 })
 export class LoginService {
 
-  private ulrApi = environment.urlApi + '/login';
+  private ulrApi = environment.urlApi;
 
   constructor(private http: HttpClient) { 
   }
 
   logar( usuario: Usuario) {
-    return this.http.post<string>(this.ulrApi, usuario).subscribe({
+    return this.http.post<string>(this.ulrApi  + '/login', usuario).subscribe({
       next: (res) => {
         var respJson = JSON.stringify(res);
         var jwt = JSON.parse(respJson);
