@@ -13,7 +13,13 @@ export class ProjetoInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log("<<<<< Interceptor sendo chamado >>>>> ");
+    var authorization = '' + localStorage.getItem("Authorization");
+
+    if(authorization !== '') {
+      console.log('Token JWT: ' + authorization);
+
+    }
+
     return next.handle(request);
   }
 }
